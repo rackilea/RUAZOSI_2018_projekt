@@ -12,6 +12,7 @@ class WrongAnswerController: UIViewController {
 
     var currentScore : String = "0"
     
+    @IBOutlet weak var bestScoreLabel: UILabel!
     @IBOutlet weak var currentScoreLabel: UILabel!
     
     @IBAction func returnToWelcomeScreen(_ sender: Any) {
@@ -26,5 +27,6 @@ class WrongAnswerController: UIViewController {
         super.viewDidLoad()
         
         currentScoreLabel.text = currentScore
+        bestScoreLabel.text = "0"
     }
 }
