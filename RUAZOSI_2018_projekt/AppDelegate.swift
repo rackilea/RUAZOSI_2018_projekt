@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Prikazivanjem rootViewControllera (a to je UINavigationController), prikaze se njegov vrsni UIViewController na stogu (a to je RealInitalViewController) i UINavigationBar na vrhu ekrana
         // RealInitalViewController ima u svom propertyju 'navigationController' postavljen ovaj nvc UINavigationController
         
-        let vc = QuestionController()
+        let vc = WelcomeController()
         let nvc = UINavigationController(rootViewController: vc)
         nvc.navigationBar.isTranslucent = false
         window?.rootViewController = nvc
