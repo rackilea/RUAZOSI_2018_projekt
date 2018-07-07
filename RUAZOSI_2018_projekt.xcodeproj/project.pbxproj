@@ -16,6 +16,8 @@
 		A8ECC6C520F0187400E76676 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECC6C420F0187400E76676 /* Question.swift */; };
 		A8ECC6C720F019AF00E76676 /* MathOperationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECC6C620F019AF00E76676 /* MathOperationEnum.swift */; };
 		A8ECC6CB20F0A92B00E76676 /* QuestionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECC6CA20F0A92B00E76676 /* QuestionFactory.swift */; };
+		A8ECC6CE20F1484C00E76676 /* WrongAnswerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECC6CC20F1484C00E76676 /* WrongAnswerController.swift */; };
+		A8ECC6CF20F1484C00E76676 /* WrongAnswerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8ECC6CD20F1484C00E76676 /* WrongAnswerController.xib */; };
 		C5B6A1B020F002CA000B3941 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6A1AF20F002CA000B3941 /* AppDelegate.swift */; };
 		C5B6A1B520F002CA000B3941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B6A1B320F002CA000B3941 /* Main.storyboard */; };
 		C5B6A1B820F002CA000B3941 /* RUAZOSI_2018_projekt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5B6A1B620F002CA000B3941 /* RUAZOSI_2018_projekt.xcdatamodeld */; };
@@ -35,6 +37,8 @@
 		A8ECC6C420F0187400E76676 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		A8ECC6C620F019AF00E76676 /* MathOperationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathOperationEnum.swift; sourceTree = "<group>"; };
 		A8ECC6CA20F0A92B00E76676 /* QuestionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionFactory.swift; sourceTree = "<group>"; };
+		A8ECC6CC20F1484C00E76676 /* WrongAnswerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongAnswerController.swift; sourceTree = "<group>"; };
+		A8ECC6CD20F1484C00E76676 /* WrongAnswerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WrongAnswerController.xib; sourceTree = "<group>"; };
 		C5B6A1AC20F002CA000B3941 /* RUAZOSI_2018_projekt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RUAZOSI_2018_projekt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B6A1AF20F002CA000B3941 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5B6A1B420F002CA000B3941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				C5B6A1C620F00307000B3941 /* WelcomeController.xib */,
 				A8ECC6BD20F00FC800E76676 /* QuestionController.swift */,
 				A8ECC6BE20F00FC800E76676 /* QuestionController.xib */,
+				A8ECC6CC20F1484C00E76676 /* WrongAnswerController.swift */,
+				A8ECC6CD20F1484C00E76676 /* WrongAnswerController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -184,6 +190,7 @@
 				C5B6A1C820F00307000B3941 /* WelcomeController.xib in Resources */,
 				C5B6A1B520F002CA000B3941 /* Main.storyboard in Resources */,
 				A8ECC6C020F00FC800E76676 /* QuestionController.xib in Resources */,
+				A8ECC6CF20F1484C00E76676 /* WrongAnswerController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +212,7 @@
 				C5B6A1B020F002CA000B3941 /* AppDelegate.swift in Sources */,
 				A8ECC6B220F00CBA00E76676 /* HighScore+CoreDataProperties.swift in Sources */,
 				A8ECC6BF20F00FC800E76676 /* QuestionController.swift in Sources */,
+				A8ECC6CE20F1484C00E76676 /* WrongAnswerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,32 +11,69 @@ import UIKit
 class QuestionController: UIViewController {
 
     @IBOutlet weak var questionLabel: UILabel!
-
-    
-    
     @IBOutlet var answerButtons: [UIButton]!
     
-    
     var question: Question? = nil
+    var counter: Int = 0
+    var correctAnswerValue: Double = 0
     
+    func setUpNextQuestion() -> Void {
+        setUpForAnimation()
+        createNewQuestion()
+        updateViewWithQuestionData()
+        animateEverythingIn()
+    }
+    
+    func correctAnswer() -> Void {
+        self.counter += 1
+        animateEverythingOut() {
+            self.setUpNextQuestion()}
+    }
     
     @IBAction func answerAction(_ sender: UIButton) {
-        animateEverythingOut();
+        
+        
+        if (sender.currentTitle == String(self.correctAnswerValue)) {
+            correctAnswer()
+        }
+        else {
+            let wrongAnswerController = WrongAnswerController()
+            wrongAnswerController.currentScore = String(self.counter)
+            self.navigationController?.pushViewController(wrongAnswerController, animated: true)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.counter = 0
+        setUpNextQuestion()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        animateEverythingIn()
         
-        question = QuestionFactory.createQuestion(level: 1)
+        self.answerButtons[0].layer.cornerRadius = 10
+        self.answerButtons[1].layer.cornerRadius = 10
+        self.answerButtons[2].layer.cornerRadius = 10
+        self.answerButtons[3].layer.cornerRadius = 10
         
-        setUpQuestion()
-        
+        setUpNextQuestion()
     }
     
-    func setUpQuestion() {
+    func createNewQuestion() -> Void {
+        question = QuestionFactory.createQuestion(level: calculateLevel())
+        if let questionTmp = question {
+            correctAnswerValue = questionTmp.answers[0]
+        }
+    }
+    
+    func calculateLevel() -> Int {
+        return self.counter / 5 + 1
+    }
+    
+    func updateViewWithQuestionData() {
         if let currentQuestion = self.question {
+            currentQuestion.answers.shuffle()
+            
             self.questionLabel.text = currentQuestion.question
             self.answerButtons[0].setTitle(String(currentQuestion.answers[0]), for: [])
             self.answerButtons[1].setTitle(String(currentQuestion.answers[1]), for: [])
@@ -44,85 +81,83 @@ class QuestionController: UIViewController {
             self.answerButtons[3].setTitle(String(currentQuestion.answers[3]), for: [])
         }
     }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.questionLabel.transform = CGAffineTransform.identity
-        self.answerButtons[0].transform = CGAffineTransform.identity
-        self.answerButtons[1].transform = CGAffineTransform.identity
-        self.answerButtons[2].transform = CGAffineTransform.identity
-        self.answerButtons[3].transform = CGAffineTransform.identity
-    }
 
-    func animateEverythingOut() {
-        
-        UIView.animate(withDuration: 1.5, animations: {
+    func animateEverythingOut(completion: @escaping ()->()) {
+        UIView.animate(withDuration: 0.3, delay: 0, animations: {
             self.questionLabel.center.y = -self.view.bounds.height
             self.questionLabel.alpha = 0
         })
         
-        UIView.animate(withDuration: 0.5, delay: 0.35, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.1, options: [.curveEaseInOut], animations: {
             self.answerButtons[0].center.x = -self.view.bounds.width
             self.answerButtons[0].alpha = 0
         })
         
-        UIView.animate(withDuration: 0.5, delay: 0.40, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.15, options: [.curveEaseInOut], animations: {
             self.answerButtons[1].center.x = -self.view.bounds.width
             self.answerButtons[1].alpha = 0
         })
         
-        UIView.animate(withDuration: 0.5, delay: 0.45, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.20, options: [.curveEaseInOut], animations: {
             self.answerButtons[2].center.x = -self.view.bounds.width
             self.answerButtons[2].alpha = 0
         })
         
-        UIView.animate(withDuration: 0.5, delay: 0.50, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.25, options: [.curveEaseInOut], animations: {
             self.answerButtons[3].center.x = -self.view.bounds.width
             self.answerButtons[3].alpha = 0
         }) { _ in
-            let vc = WelcomeController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            completion()
         }
-        
     }
     
-    
     func animateEverythingIn() {
-        self.answerButtons[0].alpha = 0
-        self.answerButtons[1].alpha = 0
-        self.answerButtons[2].alpha = 0
-        self.answerButtons[3].alpha = 0
-        
-        UIView.animate(withDuration: 1, animations: {
-            self.questionLabel.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        UIView.animate(withDuration: 0.3, delay: 0, animations: {
+            self.questionLabel.center.y = +self.view.bounds.height
             self.questionLabel.alpha = 1
         })
         
-        UIView.animate(withDuration: 0.5, delay: 0.35, options: [.curveEaseInOut], animations: {
-            
+        UIView.animate(withDuration: 0.3, delay: 0.1, options: [.curveEaseInOut], animations: {
             self.answerButtons[0].center.x = +self.view.bounds.width
             self.answerButtons[0].alpha = 1
         })
         
-        UIView.animate(withDuration: 0.5, delay: 0.40, options: [.curveEaseInOut], animations: {
-            
-            self.answerButtons[1].center.x = +150
+        UIView.animate(withDuration: 0.3, delay: 0.15, options: [.curveEaseInOut], animations: {
+            self.answerButtons[1].center.x = +self.view.bounds.width
             self.answerButtons[1].alpha = 1
         })
         
-        UIView.animate(withDuration: 0.5, delay: 0.45, options: [.curveEaseInOut], animations: {
-            
-            self.answerButtons[2].center.x = +150
+        UIView.animate(withDuration: 0.3, delay: 0.20, options: [.curveEaseInOut], animations: {
+            self.answerButtons[2].center.x = +self.view.bounds.width
             self.answerButtons[2].alpha = 1
         })
         
-        UIView.animate(withDuration: 0.5, delay: 0.50, options: [.curveEaseInOut], animations: {
-            
-            self.answerButtons[3].center.x = +150
+        UIView.animate(withDuration: 0.3, delay: 0.25, options: [.curveEaseInOut], animations: {
+            self.answerButtons[3].center.x = +self.view.bounds.width
             self.answerButtons[3].alpha = 1
         })
-        
     }
 
+    func setUpForAnimation() -> Void {
+        self.questionLabel.alpha = 0
+        self.answerButtons[0].alpha = 0
+        self.answerButtons[1].alpha = 0
+        self.answerButtons[2].alpha = 0
+        self.answerButtons[3].alpha = 0
+        self.questionLabel.center.y = -self.view.bounds.height
+        self.answerButtons[0].center.x = -self.view.bounds.width
+        self.answerButtons[1].center.x = -self.view.bounds.width
+        self.answerButtons[2].center.x = -self.view.bounds.width
+        self.answerButtons[3].center.x = -self.view.bounds.width
+    }
+}
 
+extension Array {
+    mutating func shuffle() {
+        for i in (0..<self.count).reversed() {
+            let ix1 = i
+            let ix2 = Int(arc4random_uniform(UInt32(i+1)))
+            (self[ix1], self[ix2]) = (self[ix2], self[ix1])
+        }
+    }
 }
