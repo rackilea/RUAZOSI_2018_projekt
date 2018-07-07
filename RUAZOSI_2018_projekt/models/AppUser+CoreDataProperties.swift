@@ -2,7 +2,7 @@
 //  AppUser+CoreDataProperties.swift
 //  RUAZOSI_2018_projekt
 //
-//  Created by Ivana Mrsic on 06/07/2018.
+//  Created by Ivana Mrsic on 07/07/2018.
 //  Copyright © 2018 Lea Rački. All rights reserved.
 //
 //
@@ -26,10 +26,10 @@ extension AppUser {
 extension AppUser {
 
     @objc(addScoresObject:)
-    @NSManaged public func addToScores(_ value: HighScore)
+    @NSManaged public func addToScores(_ value: Score)
 
     @objc(removeScoresObject:)
-    @NSManaged public func removeFromScores(_ value: HighScore)
+    @NSManaged public func removeFromScores(_ value: Score)
 
     @objc(addScores:)
     @NSManaged public func addToScores(_ values: NSSet)
