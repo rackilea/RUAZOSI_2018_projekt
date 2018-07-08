@@ -79,8 +79,8 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crf-Al-h2l" userLabel="WinnerUsername">
-                    <rect key="frame" x="119.5" y="333" width="137" height="70.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="59"/>
+                    <rect key="frame" x="98.5" y="333" width="179.5" height="93.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="78"/>
                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>

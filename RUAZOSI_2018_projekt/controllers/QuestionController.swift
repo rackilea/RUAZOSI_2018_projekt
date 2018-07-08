@@ -49,7 +49,6 @@ class QuestionController: UIViewController {
                     
                     gameResultViewController.winner = currentGame.getWinner()
                     
-                    
                     self.navigationController?.pushViewController(gameResultViewController, animated: true)
                 } else {
                     currentGame.firstPlayerFinished = true
