@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8ECC6B720F00D4500E76676 /* AppUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECC6B520F00D4500E76676 /* AppUser+CoreDataClass.swift */; };
+		A8ECC6B820F00D4500E76676 /* AppUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECC6B620F00D4500E76676 /* AppUser+CoreDataProperties.swift */; };
+		A8ECC6BF20F00FC800E76676 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECC6BD20F00FC800E76676 /* QuestionController.swift */; };
+		A8ECC6C020F00FC800E76676 /* QuestionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8ECC6BE20F00FC800E76676 /* QuestionController.xib */; };
+		A8ECC6C520F0187400E76676 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECC6C420F0187400E76676 /* Question.swift */; };
+		A8ECC6C720F019AF00E76676 /* MathOperationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECC6C620F019AF00E76676 /* MathOperationEnum.swift */; };
+		A8ECC6CB20F0A92B00E76676 /* QuestionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECC6CA20F0A92B00E76676 /* QuestionFactory.swift */; };
+		A8ECC6CE20F1484C00E76676 /* WrongAnswerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECC6CC20F1484C00E76676 /* WrongAnswerController.swift */; };
+		A8ECC6CF20F1484C00E76676 /* WrongAnswerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8ECC6CD20F1484C00E76676 /* WrongAnswerController.xib */; };
+		A8ECC6D220F14E2A00E76676 /* Score+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECC6D020F14E2A00E76676 /* Score+CoreDataClass.swift */; };
+		A8ECC6D320F14E2A00E76676 /* Score+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECC6D120F14E2A00E76676 /* Score+CoreDataProperties.swift */; };
 		C5B6A1B020F002CA000B3941 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6A1AF20F002CA000B3941 /* AppDelegate.swift */; };
 		C5B6A1B520F002CA000B3941 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B6A1B320F002CA000B3941 /* Main.storyboard */; };
 		C5B6A1B820F002CA000B3941 /* RUAZOSI_2018_projekt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5B6A1B620F002CA000B3941 /* RUAZOSI_2018_projekt.xcdatamodeld */; };
@@ -17,6 +28,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A8ECC6B520F00D4500E76676 /* AppUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppUser+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8ECC6B620F00D4500E76676 /* AppUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A8ECC6BD20F00FC800E76676 /* QuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
+		A8ECC6BE20F00FC800E76676 /* QuestionController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionController.xib; sourceTree = "<group>"; };
+		A8ECC6C420F0187400E76676 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		A8ECC6C620F019AF00E76676 /* MathOperationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathOperationEnum.swift; sourceTree = "<group>"; };
+		A8ECC6CA20F0A92B00E76676 /* QuestionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionFactory.swift; sourceTree = "<group>"; };
+		A8ECC6CC20F1484C00E76676 /* WrongAnswerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongAnswerController.swift; sourceTree = "<group>"; };
+		A8ECC6CD20F1484C00E76676 /* WrongAnswerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WrongAnswerController.xib; sourceTree = "<group>"; };
+		A8ECC6D020F14E2A00E76676 /* Score+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Score+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A8ECC6D120F14E2A00E76676 /* Score+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Score+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C5B6A1AC20F002CA000B3941 /* RUAZOSI_2018_projekt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RUAZOSI_2018_projekt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B6A1AF20F002CA000B3941 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5B6A1B420F002CA000B3941 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +61,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A8ECC6AC20F0072A00E76676 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				A8ECC6D020F14E2A00E76676 /* Score+CoreDataClass.swift */,
+				A8ECC6D120F14E2A00E76676 /* Score+CoreDataProperties.swift */,
+				A8ECC6B520F00D4500E76676 /* AppUser+CoreDataClass.swift */,
+				A8ECC6B620F00D4500E76676 /* AppUser+CoreDataProperties.swift */,
+				C5B6A1B620F002CA000B3941 /* RUAZOSI_2018_projekt.xcdatamodeld */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		A8ECC6C320F0186500E76676 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				A8ECC6C420F0187400E76676 /* Question.swift */,
+				A8ECC6C620F019AF00E76676 /* MathOperationEnum.swift */,
+				A8ECC6CA20F0A92B00E76676 /* QuestionFactory.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
 		C5B6A1A320F002CA000B3941 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +102,14 @@
 		C5B6A1AE20F002CA000B3941 /* RUAZOSI_2018_projekt */ = {
 			isa = PBXGroup;
 			children = (
+				A8ECC6C320F0186500E76676 /* domain */,
+				A8ECC6AC20F0072A00E76676 /* models */,
 				C5B6A1C420F002E7000B3941 /* controllers */,
 				C5B6A1AF20F002CA000B3941 /* AppDelegate.swift */,
 				C5B6A1B320F002CA000B3941 /* Main.storyboard */,
 				C5B6A1B920F002CA000B3941 /* Assets.xcassets */,
 				C5B6A1BB20F002CA000B3941 /* LaunchScreen.storyboard */,
 				C5B6A1BE20F002CA000B3941 /* Info.plist */,
-				C5B6A1B620F002CA000B3941 /* RUAZOSI_2018_projekt.xcdatamodeld */,
 			);
 			path = RUAZOSI_2018_projekt;
 			sourceTree = "<group>";
@@ -74,6 +119,10 @@
 			children = (
 				C5B6A1C520F00307000B3941 /* WelcomeController.swift */,
 				C5B6A1C620F00307000B3941 /* WelcomeController.xib */,
+				A8ECC6BD20F00FC800E76676 /* QuestionController.swift */,
+				A8ECC6BE20F00FC800E76676 /* QuestionController.xib */,
+				A8ECC6CC20F1484C00E76676 /* WrongAnswerController.swift */,
+				A8ECC6CD20F1484C00E76676 /* WrongAnswerController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -140,6 +189,8 @@
 				C5B6A1BA20F002CA000B3941 /* Assets.xcassets in Resources */,
 				C5B6A1C820F00307000B3941 /* WelcomeController.xib in Resources */,
 				C5B6A1B520F002CA000B3941 /* Main.storyboard in Resources */,
+				A8ECC6C020F00FC800E76676 /* QuestionController.xib in Resources */,
+				A8ECC6CF20F1484C00E76676 /* WrongAnswerController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,9 +201,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8ECC6D320F14E2A00E76676 /* Score+CoreDataProperties.swift in Sources */,
+				A8ECC6C720F019AF00E76676 /* MathOperationEnum.swift in Sources */,
 				C5B6A1B820F002CA000B3941 /* RUAZOSI_2018_projekt.xcdatamodeld in Sources */,
+				A8ECC6B720F00D4500E76676 /* AppUser+CoreDataClass.swift in Sources */,
+				A8ECC6C520F0187400E76676 /* Question.swift in Sources */,
 				C5B6A1C720F00307000B3941 /* WelcomeController.swift in Sources */,
+				A8ECC6B820F00D4500E76676 /* AppUser+CoreDataProperties.swift in Sources */,
+				A8ECC6D220F14E2A00E76676 /* Score+CoreDataClass.swift in Sources */,
+				A8ECC6CB20F0A92B00E76676 /* QuestionFactory.swift in Sources */,
 				C5B6A1B020F002CA000B3941 /* AppDelegate.swift in Sources */,
+				A8ECC6BF20F00FC800E76676 /* QuestionController.swift in Sources */,
+				A8ECC6CE20F1484C00E76676 /* WrongAnswerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
