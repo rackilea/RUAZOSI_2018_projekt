@@ -16,7 +16,6 @@ class QuestionController: UIViewController {
     var question: Question? = nil
     var counter: Int = 0
     var correctAnswerValue: Double = 0
-    var game: Game?
     
     func setUpNextQuestion() -> Void {
         setUpForAnimation()
@@ -32,37 +31,15 @@ class QuestionController: UIViewController {
     }
     
     @IBAction func answerAction(_ sender: UIButton) {
+        
+        
         if (sender.currentTitle == String(self.correctAnswerValue)) {
             correctAnswer()
         }
         else {
-            
-            if let currentGame = self.game {
-                if (currentGame.firstPlayerFinished) {
-                    currentGame.secondPlayerScore = self.counter
-                    
-                    let gameResultViewController = GameResultsViewController()
-                    gameResultViewController.firstPlayerUsername = currentGame.firstPlayer
-                    gameResultViewController.secondPlayerUsername = currentGame.secondPlayer
-                    gameResultViewController.firstPlayerScore = currentGame.firstPlayerScore
-                    gameResultViewController.secondPlayerScore = currentGame.secondPlayerScore
-                    
-                    gameResultViewController.winner = currentGame.getWinner()
-                    
-                    self.navigationController?.pushViewController(gameResultViewController, animated: true)
-                } else {
-                    currentGame.firstPlayerFinished = true
-                    currentGame.firstPlayerScore = self.counter
-                    let firstPlayerResultViewController = FirstPlayerResultViewController()
-                    firstPlayerResultViewController.firstPlayerNickname = currentGame.firstPlayer
-                    firstPlayerResultViewController.score = self.counter
-                    self.navigationController?.pushViewController(firstPlayerResultViewController, animated: true)
-                }
-            } else {
-                let wrongAnswerController = WrongAnswerController()
-                wrongAnswerController.currentScore = String(self.counter)
-                self.navigationController?.pushViewController(wrongAnswerController, animated: true)
-            }
+            let wrongAnswerController = WrongAnswerController()
+            wrongAnswerController.currentScore = String(self.counter)
+            self.navigationController?.pushViewController(wrongAnswerController, animated: true)
         }
     }
     
