@@ -43,6 +43,9 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func viewHighscores(_ sender: UIButton) {
+        hideHomeScreen()
+        let vc = HighscoreController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func done(_ sender: UIButton) {
@@ -107,6 +110,7 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
         showHomeScreen()
         hideButtons()
         hideDoneAndReturnButtons()
