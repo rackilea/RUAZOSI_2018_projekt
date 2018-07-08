@@ -33,9 +33,6 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
         hideHomeScreen()
         animateFirstPlayerNicknameIn()
         showDoneAndReturnButtons()
-        
-        //let vc = QuestionController()
-        //self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func startNewGame(_ sender: UIButton) {
@@ -43,8 +40,6 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
         animateFirstPlayerNicknameIn()
         animateSecondPlayerNicknameIn()
         showDoneAndReturnButtons()
-//        let vc = QuestionController()
-//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func viewHighscores(_ sender: UIButton) {
@@ -84,25 +79,39 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//
-//        inputFirstPlayerNickname.delegate = self
-//        inputSecondPlayerNickname.delegate = self
-//
-//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboardByTappingOutside))
-//        self.view.addGestureRecognizer(tap)
-//
+        
         self.backgroundImage.image = UIImage(named: "background.jpg")
         setupBtnCornersRadius()
-//
-//        lblTitle.alpha = 0
-//        self.lblTitle.transform = CGAffineTransform(scaleX: 0, y: 0)
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         showHomeScreen()
-        hideUserNameInput()
+        hideButtons()
         hideDoneAndReturnButtons()
+        hideUserNameInput()
+        
+        animateFirstPlayerNicknameOut()
+        animateSecondPlayerNicknameOut()
+    }
+    
+    func showUsernameInput() -> Void {
+        lblFirstPlayerNickname.alpha = 1
+        inputFirstPlayerNickname.alpha = 1
+        lblSecondPlayerNickname.alpha = 1
+        inputSecondPlayerNickname.alpha = 1
+    }
+    
+    func hideUserNameInput() -> Void {
+        lblFirstPlayerNickname.alpha = 0
+        inputFirstPlayerNickname.alpha = 0
+        lblSecondPlayerNickname.alpha = 0
+        inputSecondPlayerNickname.alpha = 0
+    }
+    
+    func hideButtons() -> Void {
+        btnReturn.alpha = 0
+        btnDone.alpha = 0
     }
     
     func showHomeScreen() -> Void {
@@ -143,37 +152,28 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
         })
     }
     
-    
     func showDoneAndReturnButtons() -> Void {
-        UIView.animate(withDuration: 1.5, delay: 0.4, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 1, delay: 0.4, options: [.curveEaseInOut], animations: {
             self.btnDone.transform = CGAffineTransform(translationX: -100, y: 0)
             self.btnDone.alpha = 1
         })
         
-        UIView.animate(withDuration: 1.5, delay: 0.5, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 1, delay: 0.5, options: [.curveEaseInOut], animations: {
             self.btnReturn.transform = CGAffineTransform(translationX: -100, y: 0)
             self.btnReturn.alpha = 1
         })
     }
     
     func hideDoneAndReturnButtons() -> Void {
-        btnDone.alpha = 0
-        btnReturn.alpha = 0
-    }
-
-    
-    func showUsernameInput() -> Void {
-        lblFirstPlayerNickname.alpha = 1
-        inputFirstPlayerNickname.alpha = 1
-        lblSecondPlayerNickname.alpha = 1
-        inputSecondPlayerNickname.alpha = 1
-    }
-    
-    func hideUserNameInput() -> Void {
-        lblFirstPlayerNickname.alpha = 0
-        inputFirstPlayerNickname.alpha = 0
-        lblSecondPlayerNickname.alpha = 0
-        inputSecondPlayerNickname.alpha = 0
+        UIView.animate(withDuration: 1, delay: 0.4, options: [.curveEaseInOut], animations: {
+            self.btnDone.transform = CGAffineTransform(translationX: 100, y: 0)
+            self.btnDone.alpha = 0
+        })
+        
+        UIView.animate(withDuration: 1, delay: 0.5, options: [.curveEaseInOut], animations: {
+            self.btnReturn.transform = CGAffineTransform(translationX: 100, y: 0)
+            self.btnReturn.alpha = 0
+        })
     }
     
     @objc func hideKeyboardByTappingOutside() {
@@ -210,12 +210,12 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
     func animateFirstPlayerNicknameIn() {
         firstPlayerNicknameShowing = true
         
-        UIView.animate(withDuration: 1.5, delay: 0.2, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 1, delay: 0.2, options: [.curveEaseInOut], animations: {
             self.lblFirstPlayerNickname.transform = CGAffineTransform(translationX: -100, y: 0)
             self.lblFirstPlayerNickname.alpha = 1
         })
         
-        UIView.animate(withDuration: 1.5, delay: 0.3, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 1, delay: 0.3, options: [.curveEaseInOut], animations: {
             self.inputFirstPlayerNickname.transform = CGAffineTransform(translationX: -100, y: 0)
             self.inputFirstPlayerNickname.alpha = 1
         })
