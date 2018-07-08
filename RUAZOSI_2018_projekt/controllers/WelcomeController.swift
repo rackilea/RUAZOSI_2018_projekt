@@ -25,24 +25,29 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
     @IBOutlet var lblSecondPlayerNickname: UILabel!
     @IBOutlet var inputSecondPlayerNickname: UITextField!
     
+    
+    var firstPlayerNicknameShowing: Bool = false
+    var secondPlayerNicknameShowing: Bool = false
+    
     @IBAction func startTraining(_ sender: UIButton) {
+        hideHomeScreen()
+        animateFirstPlayerNicknameIn()
+        showDoneAndReturnButtons()
+        
         //let vc = QuestionController()
-        animateSinglePlayerNicknameIn()
-        fadeOut()
         //self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func startNewGame(_ sender: UIButton) {
-        //let vc = QuestionController()
-        animateTwoPlayerNicknameIn()
-        fadeOut()
-        //self.navigationController?.pushViewController(vc, animated: true)
+        hideHomeScreen()
+        animateFirstPlayerNicknameIn()
+        animateSecondPlayerNicknameIn()
+        showDoneAndReturnButtons()
+//        let vc = QuestionController()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func viewHighscores(_ sender: UIButton) {
-        //let vc = QuestionController()
-        fadeOut()
-        //self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func done(_ sender: UIButton) {
@@ -57,75 +62,118 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
             }
         }
         let vc = QuestionController()
-        fadeOut()
-        btnDone.alpha = 0
-        btnReturn.alpha = 0
-        lblFirstPlayerNickname.alpha = 0
-        inputFirstPlayerNickname.alpha = 0
-        lblSecondPlayerNickname.alpha = 0
-        inputSecondPlayerNickname.alpha = 0
         self.navigationController?.pushViewController(vc, animated: true)
         inputFirstPlayerNickname.text = ""
         inputSecondPlayerNickname.text = ""
     }
     
     @IBAction func returnToHomeState(_ sender: UIButton) {
-        UIView.animate(withDuration: 1.5, delay: 0.2, options: [.curveEaseInOut], animations: {
-            self.lblFirstPlayerNickname.transform = CGAffineTransform(translationX: 100, y: 0)
-            self.lblFirstPlayerNickname.alpha = 0
-        })
-        UIView.animate(withDuration: 1.5, delay: 0.3, options: [.curveEaseInOut], animations: {
-            self.inputFirstPlayerNickname.transform = CGAffineTransform(translationX: 100, y: 0)
-            self.inputFirstPlayerNickname.alpha = 0
-        })
-        UIView.animate(withDuration: 1.5, delay: 0.4, options: [.curveEaseInOut], animations: {
-            self.btnDone.transform = CGAffineTransform(translationX: 100, y: 0)
-            self.btnDone.alpha = 0
-        })
-        
-        UIView.animate(withDuration: 1.5, delay: 0.5, options: [.curveEaseInOut], animations: {
-            self.btnReturn.transform = CGAffineTransform(translationX: 100, y: 0)
-            self.btnReturn.alpha = 0
-        })
-        
-        if (self.inputSecondPlayerNickname.alpha == 1) {
-            UIView.animate(withDuration: 1.5, delay: 0.2, options: [.curveEaseInOut], animations: {
-                self.lblSecondPlayerNickname.transform = CGAffineTransform(translationX: 100, y: 0)
-                self.lblSecondPlayerNickname.alpha = 0
-            })
-            UIView.animate(withDuration: 1.5, delay: 0.3, options: [.curveEaseInOut], animations: {
-                self.inputSecondPlayerNickname.transform = CGAffineTransform(translationX: 100, y: 0)
-                self.inputSecondPlayerNickname.alpha = 0
-            })
+        hideDoneAndReturnButtons()
+        showHomeScreen()
+        if (self.firstPlayerNicknameShowing) {
+            animateFirstPlayerNicknameOut()
         }
-        fadeIn()
+        
+        if (self.secondPlayerNicknameShowing) {
+            animateSecondPlayerNicknameOut()
+        }
+        
+        inputFirstPlayerNickname.text = ""
+        inputSecondPlayerNickname.text = ""
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        inputFirstPlayerNickname.delegate = self
-        inputSecondPlayerNickname.delegate = self
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboardByTappingOutside))
-        self.view.addGestureRecognizer(tap)
-    
+//
+//        inputFirstPlayerNickname.delegate = self
+//        inputSecondPlayerNickname.delegate = self
+//
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboardByTappingOutside))
+//        self.view.addGestureRecognizer(tap)
+//
         self.backgroundImage.image = UIImage(named: "background.jpg")
+        setupBtnCornersRadius()
+//
+//        lblTitle.alpha = 0
+//        self.lblTitle.transform = CGAffineTransform(scaleX: 0, y: 0)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        showHomeScreen()
+        hideUserNameInput()
+        hideDoneAndReturnButtons()
+    }
+    
+    func showHomeScreen() -> Void {
+        UIView.animate(withDuration: 1, animations: {
+            self.lblTitle.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+            self.lblTitle.alpha = 1
+        })
+        UIView.animate(withDuration: 1, delay: 0.2, options: [.curveEaseInOut], animations: {
+            self.btnTraining.transform = CGAffineTransform(translationX: 500, y: 0)
+            self.btnTraining.alpha = 1
+        })
+        UIView.animate(withDuration: 1, delay: 0.3, options: [.curveEaseInOut], animations: {
+            self.btnNewGame.transform = CGAffineTransform(translationX: 500, y: 0)
+            self.btnNewGame.alpha = 1
+        })
+        UIView.animate(withDuration: 1, delay: 0.4, options: [.curveEaseInOut], animations: {
+            self.btnHighscores.transform = CGAffineTransform(translationX: 500, y: 0)
+            self.btnHighscores.alpha = 1
+        })
+    }
+    
+    func hideHomeScreen() -> Void {
+        UIView.animate(withDuration: 1, animations: {
+            self.lblTitle.transform = CGAffineTransform(scaleX: 0, y: 0)
+            self.lblTitle.alpha = 0
+        })
+        UIView.animate(withDuration: 1, delay: 0.2, options: [.curveEaseInOut], animations: {
+            self.btnTraining.transform = CGAffineTransform(translationX: -500, y: 0)
+            self.btnTraining.alpha = 1
+        })
+        UIView.animate(withDuration: 1, delay: 0.3, options: [.curveEaseInOut], animations: {
+            self.btnNewGame.transform = CGAffineTransform(translationX: -500, y: 0)
+            self.btnNewGame.alpha = 1
+        })
+        UIView.animate(withDuration: 1, delay: 0.4, options: [.curveEaseInOut], animations: {
+            self.btnHighscores.transform = CGAffineTransform(translationX: -500, y: 0)
+            self.btnHighscores.alpha = 1
+        })
+    }
+    
+    
+    func showDoneAndReturnButtons() -> Void {
+        UIView.animate(withDuration: 1.5, delay: 0.4, options: [.curveEaseInOut], animations: {
+            self.btnDone.transform = CGAffineTransform(translationX: -100, y: 0)
+            self.btnDone.alpha = 1
+        })
         
-        lblTitle.alpha = 0
-        self.lblTitle.transform = CGAffineTransform(scaleX: 0, y: 0)
-        btnTraining.alpha = 0
-        btnNewGame.alpha = 0
-        btnHighscores.alpha = 0
+        UIView.animate(withDuration: 1.5, delay: 0.5, options: [.curveEaseInOut], animations: {
+            self.btnReturn.transform = CGAffineTransform(translationX: -100, y: 0)
+            self.btnReturn.alpha = 1
+        })
+    }
+    
+    func hideDoneAndReturnButtons() -> Void {
         btnDone.alpha = 0
         btnReturn.alpha = 0
-        
+    }
+
+    
+    func showUsernameInput() -> Void {
+        lblFirstPlayerNickname.alpha = 1
+        inputFirstPlayerNickname.alpha = 1
+        lblSecondPlayerNickname.alpha = 1
+        inputSecondPlayerNickname.alpha = 1
+    }
+    
+    func hideUserNameInput() -> Void {
         lblFirstPlayerNickname.alpha = 0
         inputFirstPlayerNickname.alpha = 0
         lblSecondPlayerNickname.alpha = 0
         inputSecondPlayerNickname.alpha = 0
-        
-        setupBtnCornersRadius()
     }
     
     @objc func hideKeyboardByTappingOutside() {
@@ -159,115 +207,58 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
         inputSecondPlayerNickname.clipsToBounds = true
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        self.lblTitle.transform = CGAffineTransform.identity
-        self.btnTraining.transform = CGAffineTransform.identity
-        self.btnNewGame.transform = CGAffineTransform.identity
-        self.btnHighscores.transform = CGAffineTransform.identity
-        self.btnDone.transform = CGAffineTransform.identity
-        self.btnReturn.transform = CGAffineTransform.identity
-        self.lblFirstPlayerNickname.transform = CGAffineTransform.identity
-        self.inputFirstPlayerNickname.transform = CGAffineTransform.identity
-        self.lblSecondPlayerNickname.transform = CGAffineTransform.identity
-        self.inputSecondPlayerNickname.transform = CGAffineTransform.identity
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = true
-        animateEverythingIn()
-    }
-    
-    func fadeOut() {
-    
-        UIView.animate(withDuration: 1, animations: {
-            self.lblTitle.center.y -= self.view.bounds.height
-            self.lblTitle.alpha = 0
-        })
-        UIView.animate(withDuration: 1, delay: 0.2, options: [.curveEaseInOut], animations: {
-            self.btnTraining.center.y -= self.view.bounds.height
-            self.btnTraining.alpha = 0
-        })
-        UIView.animate(withDuration: 1, delay: 0.3, options: [.curveEaseInOut], animations: {
-            self.btnNewGame.center.y -= self.view.bounds.height
-            self.btnNewGame.alpha = 0
-        })
-        UIView.animate(withDuration: 1, delay: 0.4, options: [.curveEaseInOut], animations: {
-            self.btnHighscores.center.y -= self.view.bounds.height
-            self.btnHighscores.alpha = 0
-        })
-    }
-    
-    func fadeIn() {
-        
-        UIView.animate(withDuration: 1.5, animations: {
-            self.lblTitle.center.y += self.view.bounds.height
-            self.lblTitle.alpha = 1
-        })
-        UIView.animate(withDuration: 1.5, delay: 0.2, options: [.curveEaseInOut], animations: {
-            self.btnTraining.center.y += self.view.bounds.height
-            self.btnTraining.alpha = 1
-        })
-        UIView.animate(withDuration: 1.5, delay: 0.3, options: [.curveEaseInOut], animations: {
-            self.btnNewGame.center.y += self.view.bounds.height
-            self.btnNewGame.alpha = 1
-        })
-        UIView.animate(withDuration: 1.5, delay: 0.4, options: [.curveEaseInOut], animations: {
-            self.btnHighscores.center.y += self.view.bounds.height
-            self.btnHighscores.alpha = 1
-        })
-    }
-    
-    func animateEverythingIn() {
-        UIView.animate(withDuration: 2.0, animations: {
-            self.lblTitle.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-            self.lblTitle.alpha = 1
-        })
-        UIView.animate(withDuration: 1.5, delay: 0.2, options: [.curveEaseInOut], animations: {
-            self.btnTraining.transform = CGAffineTransform(translationX: 100, y: 0)
-            self.btnTraining.alpha = 1
-        })
-        UIView.animate(withDuration: 1.5, delay: 0.3, options: [.curveEaseInOut], animations: {
-            self.btnNewGame.transform = CGAffineTransform(translationX: 100, y: 0)
-            self.btnNewGame.alpha = 1
-        })
-        UIView.animate(withDuration: 1.5, delay: 0.4, options: [.curveEaseInOut], animations: {
-            self.btnHighscores.transform = CGAffineTransform(translationX: 100, y: 0)
-            self.btnHighscores.alpha = 1
-        })
-    }
-    
-    func animateSinglePlayerNicknameIn() {
+    func animateFirstPlayerNicknameIn() {
+        firstPlayerNicknameShowing = true
         
         UIView.animate(withDuration: 1.5, delay: 0.2, options: [.curveEaseInOut], animations: {
             self.lblFirstPlayerNickname.transform = CGAffineTransform(translationX: -100, y: 0)
             self.lblFirstPlayerNickname.alpha = 1
         })
+        
         UIView.animate(withDuration: 1.5, delay: 0.3, options: [.curveEaseInOut], animations: {
             self.inputFirstPlayerNickname.transform = CGAffineTransform(translationX: -100, y: 0)
             self.inputFirstPlayerNickname.alpha = 1
         })
-        UIView.animate(withDuration: 1.5, delay: 0.4, options: [.curveEaseInOut], animations: {
-            self.btnDone.transform = CGAffineTransform(translationX: -100, y: 0)
-            self.btnDone.alpha = 1
+    }
+    
+    
+    func animateFirstPlayerNicknameOut() {
+        firstPlayerNicknameShowing = false
+
+        UIView.animate(withDuration: 1, delay: 0.2, options: [.curveEaseInOut], animations: {
+            self.lblFirstPlayerNickname.transform = CGAffineTransform(translationX: +100, y: 0)
+            self.lblFirstPlayerNickname.alpha = 0
         })
         
-        UIView.animate(withDuration: 1.5, delay: 0.5, options: [.curveEaseInOut], animations: {
-            self.btnReturn.transform = CGAffineTransform(translationX: -100, y: 0)
-            self.btnReturn.alpha = 1
+        UIView.animate(withDuration: 1, delay: 0.3, options: [.curveEaseInOut], animations: {
+            self.inputFirstPlayerNickname.transform = CGAffineTransform(translationX: +100, y: 0)
+            self.inputFirstPlayerNickname.alpha = 0
         })
     }
     
-    func animateTwoPlayerNicknameIn() {
-        animateSinglePlayerNicknameIn()
+    func animateSecondPlayerNicknameIn() {
+        secondPlayerNicknameShowing = true
         
-        UIView.animate(withDuration: 1.5, delay: 0.2, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 1, delay: 0.2, options: [.curveEaseInOut], animations: {
             self.lblSecondPlayerNickname.transform = CGAffineTransform(translationX: -100, y: 0)
             self.lblSecondPlayerNickname.alpha = 1
         })
-        UIView.animate(withDuration: 1.5, delay: 0.3, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 1, delay: 0.3, options: [.curveEaseInOut], animations: {
             self.inputSecondPlayerNickname.transform = CGAffineTransform(translationX: -100, y: 0)
             self.inputSecondPlayerNickname.alpha = 1
+        })
+    }
+    
+    func animateSecondPlayerNicknameOut() {
+        secondPlayerNicknameShowing = false
+        
+        UIView.animate(withDuration: 1, delay: 0.2, options: [.curveEaseInOut], animations: {
+            self.lblSecondPlayerNickname.transform = CGAffineTransform(translationX: 100, y: 0)
+            self.lblSecondPlayerNickname.alpha = 0
+        })
+        UIView.animate(withDuration: 1, delay: 0.3, options: [.curveEaseInOut], animations: {
+            self.inputSecondPlayerNickname.transform = CGAffineTransform(translationX: 100, y: 0)
+            self.inputSecondPlayerNickname.alpha = 0
         })
     }
 }

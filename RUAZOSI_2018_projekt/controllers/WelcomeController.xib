@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -45,7 +45,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJm-yO-O82">
-                    <rect key="frame" x="-37.5" y="252.5" width="250" height="35"/>
+                    <rect key="frame" x="-437.5" y="252.5" width="250" height="35"/>
                     <color key="backgroundColor" white="1" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="250" id="RoG-9E-FdU"/>
@@ -60,7 +60,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPZ-Ec-Apo">
-                    <rect key="frame" x="-37.5" y="312.5" width="250" height="35"/>
+                    <rect key="frame" x="-437.5" y="312.5" width="250" height="35"/>
                     <color key="backgroundColor" white="1" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="8Bk-YD-Bsv"/>
@@ -75,7 +75,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Taq-x2-BET">
-                    <rect key="frame" x="-37.5" y="372.5" width="250" height="35"/>
+                    <rect key="frame" x="-437.5" y="372.5" width="250" height="35"/>
                     <color key="backgroundColor" white="1" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="250" id="3dp-fU-bPu"/>
@@ -173,13 +173,13 @@
                 <constraint firstItem="X2b-R1-smd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="9rb-w5-DB3"/>
                 <constraint firstItem="5s6-mP-n3E" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="100" id="DzN-Gq-hbV"/>
                 <constraint firstItem="k7w-hL-xFE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="100" id="FKj-ov-VwT"/>
-                <constraint firstItem="Taq-x2-BET" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-100" id="Fqm-eG-Bed"/>
+                <constraint firstItem="Taq-x2-BET" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-500" id="Fqm-eG-Bed"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="B87-eN-THc" secondAttribute="trailing" id="Qgg-zB-2Sg"/>
                 <constraint firstItem="XPZ-Ec-Apo" firstAttribute="top" secondItem="HJm-yO-O82" secondAttribute="bottom" constant="25" id="TIa-zn-LPo"/>
                 <constraint firstItem="Taq-x2-BET" firstAttribute="top" secondItem="XPZ-Ec-Apo" secondAttribute="bottom" constant="25" id="XWQ-ME-0PI"/>
                 <constraint firstItem="lZ5-xa-B8N" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-213.5" id="Zg7-zZ-zrL"/>
-                <constraint firstItem="HJm-yO-O82" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-100" id="e3C-6L-c9B"/>
-                <constraint firstItem="XPZ-Ec-Apo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-100" id="f5k-HE-Jeb"/>
+                <constraint firstItem="HJm-yO-O82" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-500" id="e3C-6L-c9B"/>
+                <constraint firstItem="XPZ-Ec-Apo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-500" id="f5k-HE-Jeb"/>
                 <constraint firstItem="k7w-hL-xFE" firstAttribute="top" secondItem="i69-YZ-3zO" secondAttribute="bottom" constant="100" id="flD-fE-IdF"/>
                 <constraint firstItem="X2b-R1-smd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="100" id="kco-tg-yaR"/>
                 <constraint firstItem="95l-gv-dcW" firstAttribute="top" secondItem="k7w-hL-xFE" secondAttribute="bottom" constant="20" id="nGr-hb-5Bm"/>
