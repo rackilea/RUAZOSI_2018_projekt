@@ -56,8 +56,13 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
                 return
             }
         }
-        let vc = QuestionController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        let questionController = QuestionController()
+        if (firstPlayerNicknameShowing && secondPlayerNicknameShowing) {
+            questionController.game = Game(firstPlayer: inputFirstPlayerNickname.text!, secondPlayer: inputSecondPlayerNickname.text!)
+        }
+        
+        self.navigationController?.pushViewController(questionController, animated: true)
         inputFirstPlayerNickname.text = ""
         inputSecondPlayerNickname.text = ""
     }
