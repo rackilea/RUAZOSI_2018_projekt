@@ -25,6 +25,7 @@
 		C5B6A1BD20F002CA000B3941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5B6A1BB20F002CA000B3941 /* LaunchScreen.storyboard */; };
 		C5B6A1C720F00307000B3941 /* WelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6A1C520F00307000B3941 /* WelcomeController.swift */; };
 		C5B6A1C820F00307000B3941 /* WelcomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5B6A1C620F00307000B3941 /* WelcomeController.xib */; };
+		C5B6A1CB20F26EF5000B3941 /* UITextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B6A1CA20F26EF5000B3941 /* UITextFieldExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		C5B6A1BE20F002CA000B3941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5B6A1C520F00307000B3941 /* WelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeController.swift; sourceTree = "<group>"; };
 		C5B6A1C620F00307000B3941 /* WelcomeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeController.xib; sourceTree = "<group>"; };
+		C5B6A1CA20F26EF5000B3941 /* UITextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		C5B6A1AE20F002CA000B3941 /* RUAZOSI_2018_projekt */ = {
 			isa = PBXGroup;
 			children = (
+				C5B6A1C920F26ED2000B3941 /* extensions */,
 				A8ECC6C320F0186500E76676 /* domain */,
 				A8ECC6AC20F0072A00E76676 /* models */,
 				C5B6A1C420F002E7000B3941 /* controllers */,
@@ -125,6 +128,14 @@
 				A8ECC6CD20F1484C00E76676 /* WrongAnswerController.xib */,
 			);
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		C5B6A1C920F26ED2000B3941 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C5B6A1CA20F26EF5000B3941 /* UITextFieldExt.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +224,7 @@
 				C5B6A1B020F002CA000B3941 /* AppDelegate.swift in Sources */,
 				A8ECC6BF20F00FC800E76676 /* QuestionController.swift in Sources */,
 				A8ECC6CE20F1484C00E76676 /* WrongAnswerController.swift in Sources */,
+				C5B6A1CB20F26EF5000B3941 /* UITextFieldExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +369,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RUAZOSI_2018_projekt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -374,6 +387,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RUAZOSI_2018_projekt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

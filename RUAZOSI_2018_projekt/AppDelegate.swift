@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc = WelcomeController()
         let nvc = UINavigationController(rootViewController: vc)
         nvc.navigationBar.isTranslucent = false
+        nvc.navigationBar.isHidden = true
+        UIApplication.shared.statusBarStyle = .lightContent
         window?.rootViewController = nvc
         window?.makeKeyAndVisible()
         return true

@@ -26,6 +26,8 @@ class WrongAnswerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.isHidden = true
+        
         currentScoreLabel.text = currentScore
         bestScoreLabel.text = "0"
     }

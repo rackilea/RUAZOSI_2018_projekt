@@ -51,6 +51,9 @@ class QuestionController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.isHidden = false
+        
         self.answerButtons[0].layer.cornerRadius = 10
         self.answerButtons[1].layer.cornerRadius = 10
         self.answerButtons[2].layer.cornerRadius = 10
