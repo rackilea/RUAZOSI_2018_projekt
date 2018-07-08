@@ -84,7 +84,6 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
         setupBtnCornersRadius()
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         showHomeScreen()
         hideButtons()
