@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstPlayerResultViewController" customModule="RUAZOSI_2018_projekt" customModuleProvider="target">
+            <connections>
+                <outlet property="currentPlayerLabel" destination="hxI-Vu-4hF" id="kfh-sn-UQw"/>
+                <outlet property="scoreLabel" destination="wxw-Fp-jf7" id="EDp-yf-LDM"/>
+                <outlet property="view" destination="tst-gl-1BZ" id="EMB-Fs-PGd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="tst-gl-1BZ">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxI-Vu-4hF">
+                    <rect key="frame" x="154" y="270" width="68.5" height="25.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ml1-BH-yTc" userLabel="Retry">
+                    <rect key="frame" x="19" y="567.5" width="337.5" height="67"/>
+                    <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="NEXT PLAYER">
+                        <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="nextPlayerTapped:" destination="-1" eventType="touchUpInside" id="Hig-qI-YRI"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxw-Fp-jf7">
+                    <rect key="frame" x="155.5" y="305.5" width="64" height="32.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Ml1-BH-yTc" firstAttribute="centerY" secondItem="Iee-qW-ZYC" secondAttribute="centerY" multiplier="1.75" id="6ES-L6-Chq"/>
+                <constraint firstItem="Ml1-BH-yTc" firstAttribute="height" secondItem="tst-gl-1BZ" secondAttribute="height" multiplier="0.1" id="Ktk-Ql-kCP"/>
+                <constraint firstItem="Ml1-BH-yTc" firstAttribute="width" secondItem="tst-gl-1BZ" secondAttribute="width" multiplier="0.9" id="LjR-B2-ngT"/>
+                <constraint firstItem="wxw-Fp-jf7" firstAttribute="top" secondItem="hxI-Vu-4hF" secondAttribute="bottom" constant="10" id="S87-oc-w2b"/>
+                <constraint firstItem="wxw-Fp-jf7" firstAttribute="centerX" secondItem="Iee-qW-ZYC" secondAttribute="centerX" id="U9t-e3-VZ2"/>
+                <constraint firstItem="Ml1-BH-yTc" firstAttribute="centerX" secondItem="Iee-qW-ZYC" secondAttribute="centerX" id="eJw-tx-RwQ"/>
+                <constraint firstItem="hxI-Vu-4hF" firstAttribute="centerX" secondItem="Iee-qW-ZYC" secondAttribute="centerX" id="fkO-gl-enE"/>
+                <constraint firstItem="hxI-Vu-4hF" firstAttribute="top" secondItem="Iee-qW-ZYC" secondAttribute="top" constant="250" id="xEt-rO-R6g"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Iee-qW-ZYC"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

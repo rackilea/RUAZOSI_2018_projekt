@@ -56,8 +56,13 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
                 return
             }
         }
-        let vc = QuestionController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        let questionController = QuestionController()
+        if (firstPlayerNicknameShowing && secondPlayerNicknameShowing) {
+            questionController.game = Game(firstPlayer: inputFirstPlayerNickname.text!, secondPlayer: inputSecondPlayerNickname.text!)
+        }
+        
+        self.navigationController?.pushViewController(questionController, animated: true)
         inputFirstPlayerNickname.text = ""
         inputSecondPlayerNickname.text = ""
     }
@@ -80,8 +85,25 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        inputFirstPlayerNickname.delegate = self
+        inputSecondPlayerNickname.delegate = self
+            
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboardByTappingOutside))
+        self.view.addGestureRecognizer(tap)
+        
         self.backgroundImage.image = UIImage(named: "background.jpg")
         setupBtnCornersRadius()
+    }
+    
+    @objc func hideKeyboardByTappingOutside() {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        inputFirstPlayerNickname.resignFirstResponder()
+        inputSecondPlayerNickname.resignFirstResponder()
+        
+        return true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -173,14 +195,6 @@ class WelcomeController: UIViewController, UITextFieldDelegate {
             self.btnReturn.transform = CGAffineTransform(translationX: 100, y: 0)
             self.btnReturn.alpha = 0
         })
-    }
-    
-    @objc func hideKeyboardByTappingOutside() {
-        self.view.endEditing(true)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return true
     }
     
     func setupBtnCornersRadius() {

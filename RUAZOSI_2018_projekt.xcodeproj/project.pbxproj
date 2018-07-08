@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A87592E220F29B0F00660083 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87592E120F29B0F00660083 /* Game.swift */; };
+		A87592E520F29D9D00660083 /* FirstPlayerResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87592E320F29D9D00660083 /* FirstPlayerResultViewController.swift */; };
+		A87592E620F29D9D00660083 /* FirstPlayerResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A87592E420F29D9D00660083 /* FirstPlayerResultViewController.xib */; };
+		A87592E920F2A2A000660083 /* GameResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87592E720F2A2A000660083 /* GameResultsViewController.swift */; };
+		A87592EA20F2A2A000660083 /* GameResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A87592E820F2A2A000660083 /* GameResultsViewController.xib */; };
 		A8ECC6B720F00D4500E76676 /* AppUser+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECC6B520F00D4500E76676 /* AppUser+CoreDataClass.swift */; };
 		A8ECC6B820F00D4500E76676 /* AppUser+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECC6B620F00D4500E76676 /* AppUser+CoreDataProperties.swift */; };
 		A8ECC6BF20F00FC800E76676 /* QuestionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ECC6BD20F00FC800E76676 /* QuestionController.swift */; };
@@ -29,6 +34,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A87592E120F29B0F00660083 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		A87592E320F29D9D00660083 /* FirstPlayerResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPlayerResultViewController.swift; sourceTree = "<group>"; };
+		A87592E420F29D9D00660083 /* FirstPlayerResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FirstPlayerResultViewController.xib; sourceTree = "<group>"; };
+		A87592E720F2A2A000660083 /* GameResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultsViewController.swift; sourceTree = "<group>"; };
+		A87592E820F2A2A000660083 /* GameResultsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameResultsViewController.xib; sourceTree = "<group>"; };
 		A8ECC6B520F00D4500E76676 /* AppUser+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppUser+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A8ECC6B620F00D4500E76676 /* AppUser+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppUser+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A8ECC6BD20F00FC800E76676 /* QuestionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionController.swift; sourceTree = "<group>"; };
@@ -81,6 +91,7 @@
 				A8ECC6C420F0187400E76676 /* Question.swift */,
 				A8ECC6C620F019AF00E76676 /* MathOperationEnum.swift */,
 				A8ECC6CA20F0A92B00E76676 /* QuestionFactory.swift */,
+				A87592E120F29B0F00660083 /* Game.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -126,6 +137,10 @@
 				A8ECC6BE20F00FC800E76676 /* QuestionController.xib */,
 				A8ECC6CC20F1484C00E76676 /* WrongAnswerController.swift */,
 				A8ECC6CD20F1484C00E76676 /* WrongAnswerController.xib */,
+				A87592E320F29D9D00660083 /* FirstPlayerResultViewController.swift */,
+				A87592E420F29D9D00660083 /* FirstPlayerResultViewController.xib */,
+				A87592E720F2A2A000660083 /* GameResultsViewController.swift */,
+				A87592E820F2A2A000660083 /* GameResultsViewController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -197,6 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5B6A1BD20F002CA000B3941 /* LaunchScreen.storyboard in Resources */,
+				A87592EA20F2A2A000660083 /* GameResultsViewController.xib in Resources */,
+				A87592E620F29D9D00660083 /* FirstPlayerResultViewController.xib in Resources */,
 				C5B6A1BA20F002CA000B3941 /* Assets.xcassets in Resources */,
 				C5B6A1C820F00307000B3941 /* WelcomeController.xib in Resources */,
 				C5B6A1B520F002CA000B3941 /* Main.storyboard in Resources */,
@@ -217,13 +234,16 @@
 				C5B6A1B820F002CA000B3941 /* RUAZOSI_2018_projekt.xcdatamodeld in Sources */,
 				A8ECC6B720F00D4500E76676 /* AppUser+CoreDataClass.swift in Sources */,
 				A8ECC6C520F0187400E76676 /* Question.swift in Sources */,
+				A87592E920F2A2A000660083 /* GameResultsViewController.swift in Sources */,
 				C5B6A1C720F00307000B3941 /* WelcomeController.swift in Sources */,
 				A8ECC6B820F00D4500E76676 /* AppUser+CoreDataProperties.swift in Sources */,
 				A8ECC6D220F14E2A00E76676 /* Score+CoreDataClass.swift in Sources */,
 				A8ECC6CB20F0A92B00E76676 /* QuestionFactory.swift in Sources */,
+				A87592E220F29B0F00660083 /* Game.swift in Sources */,
 				C5B6A1B020F002CA000B3941 /* AppDelegate.swift in Sources */,
 				A8ECC6BF20F00FC800E76676 /* QuestionController.swift in Sources */,
 				A8ECC6CE20F1484C00E76676 /* WrongAnswerController.swift in Sources */,
+				A87592E520F29D9D00660083 /* FirstPlayerResultViewController.swift in Sources */,
 				C5B6A1CB20F26EF5000B3941 /* UITextFieldExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,7 +389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 86UEKV73HK;
 				INFOPLIST_FILE = RUAZOSI_2018_projekt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -387,7 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 86UEKV73HK;
 				INFOPLIST_FILE = RUAZOSI_2018_projekt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
